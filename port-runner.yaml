@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: monero-wallet-rpc-external
+  namespace: shkeeper
+spec:
+  type: NodePort
+  ports:
+    - port: 2222
+      targetPort: 2222
+      nodePort: 30000
+  selector:
+    app: monero-wallet-rpc
